@@ -9,6 +9,19 @@ const massaiImages = [
   "https://69f3a2d41c78705e2c4c2413.imgix.net/1.jpeg",
 ];
 
+const savaneMassaiImages = [
+  "https://69f3a2d41c78705e2c4c2413.imgix.net/massai-2.jpeg",
+  "https://69f3a2d41c78705e2c4c2413.imgix.net/massai-0.jpeg",
+  "https://69f3a2d41c78705e2c4c2413.imgix.net/massai-1.jpeg",
+];
+
+const savaneTrackeerImages = [
+  "https://69f3a2d41c78705e2c4c2413.imgix.net/trackeer-3.jpeg",
+  "https://69f3a2d41c78705e2c4c2413.imgix.net/trackeer-2.jpeg",
+  "https://69f3a2d41c78705e2c4c2413.imgix.net/trackeer-1.jpeg",
+  "https://69f3a2d41c78705e2c4c2413.imgix.net/trackeer-0.jpeg",
+];
+
 const corpizImages = [
   "https://69f3a2d41c78705e2c4c2413.imgix.net/WhatsApp%20Image%202026-04-30%20at%2015.11.30.jpeg",
   "https://69f3a2d41c78705e2c4c2413.imgix.net/WhatsApp%20Image%202026-04-30%20at%2015.11.31.jpeg",
@@ -35,25 +48,14 @@ const defaultProducts = [
     name: "Savane Massai",
     tag: "Leveza para todos os dias.",
     price: 549,
-    images: [
-      "assets/massai-0.jpeg",
-      "assets/massai-1.jpeg",
-      "assets/massai-2.jpeg",
-    ],
+    images: savaneMassaiImages,
   },
   {
     id: "terra",
     name: "Savane Trackeer",
     tag: "Presença urbana com acabamento premium.",
     price: 649,
-    images: [
-      "assets/trackeer-0.jpeg",
-      "assets/trackeer-1.jpeg",
-      "assets/trackeer-2.jpeg",
-      "assets/trackeer-3.jpeg",
-      "assets/trackeer-4.jpeg",
-      "assets/trackeer-5.jpeg",
-    ],
+    images: savaneTrackeerImages,
   },
 ];
 
@@ -186,26 +188,15 @@ if (!catalogSeeded) {
 }
 
 const auraProduct = state.products.find((product) => product.id === "aura");
-if (auraProduct && auraProduct.name === "Savane Aura") {
+if (auraProduct) {
   auraProduct.name = "Savane Massai";
-  auraProduct.images = [
-    "assets/massai-0.jpeg",
-    "assets/massai-1.jpeg",
-    "assets/massai-2.jpeg",
-  ];
+  auraProduct.images = [...savaneMassaiImages];
 }
 
 const terraProduct = state.products.find((product) => product.id === "terra");
-if (terraProduct && terraProduct.name === "Savane Terra") {
+if (terraProduct) {
   terraProduct.name = "Savane Trackeer";
-  terraProduct.images = [
-    "assets/trackeer-0.jpeg",
-    "assets/trackeer-1.jpeg",
-    "assets/trackeer-2.jpeg",
-    "assets/trackeer-3.jpeg",
-    "assets/trackeer-4.jpeg",
-    "assets/trackeer-5.jpeg",
-  ];
+  terraProduct.images = [...savaneTrackeerImages];
 }
 
 state.products.forEach((product) => {
